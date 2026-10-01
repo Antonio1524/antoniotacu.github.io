@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ANTONIOTACU — Modelos 3D, figuras, accesorios, decoración y diseños.">
+<title>ANTONIOTACU — Modelos 3D</title>
+<style>
+:root{
+  --bg:#08090b; --surface:#111317; --surface2:#17191e; --text:#f7f7f4;
+  --muted:#9da1aa; --line:#262a31; --accent:#fff; --green:#25d366;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+nav{position:absolute;top:0;left:0;right:0;z-index:5;padding:25px 0}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.05rem;font-weight:900;letter-spacing:2.5px}
+.navlinks{display:flex;gap:28px;color:var(--muted);font-size:.9rem}
+.navlinks a:hover{color:#fff}
+.hero{
+ min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;
+ background:
+ radial-gradient(circle at 75% 35%,rgba(255,255,255,.13),transparent 24%),
+ radial-gradient(circle at 15% 80%,rgba(255,255,255,.055),transparent 28%),
+ linear-gradient(180deg,#0a0b0e,#08090b);
+}
+.hero:after{
+ content:"3D";position:absolute;right:-35px;bottom:-80px;font-size:32vw;font-weight:900;
+ color:rgba(255,255,255,.018);line-height:1;pointer-events:none;
+}
+.hero-content{position:relative;z-index:1;padding:125px 0 80px}
+.badge{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px}
+h1{font-size:clamp(3.5rem,9vw,7.7rem);line-height:.87;letter-spacing:-6px;max-width:900px}
+.hero-copy{max-width:640px;color:var(--muted);font-size:1.12rem;margin:28px 0 32px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:11px;border:1px solid var(--line);font-weight:750;transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:#555}
+.primary{background:#fff;color:#08090b;border-color:#fff}
+.whatsapp{background:var(--green);color:#071008;border-color:var(--green)}
+section{padding:95px 0;border-top:1px solid var(--line)}
+.kicker{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+h2{font-size:clamp(2.1rem,5vw,3.6rem);line-height:1;letter-spacing:-2px}
+.intro{color:var(--muted);max-width:650px;margin:16px 0 40px}
+.catalog{
+ display:grid;grid-template-columns:1.4fr .6fr;gap:18px;
+}
+.catalog-main,.catalog-side{
+ border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#191c21,#101216);
+ padding:34px;position:relative;overflow:hidden;
+}
+.catalog-main:after{content:"CATÁLOGO";position:absolute;right:-45px;bottom:-25px;font-size:5rem;font-weight:900;color:rgba(255,255,255,.025);transform:rotate(-10deg)}
+.catalog-main h3{font-size:2rem;margin-bottom:8px}
+.catalog-main p,.catalog-side p{color:var(--muted)}
+.catalog-side{display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+.catalog-side .number{font-size:4rem;font-weight:900;line-height:1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.product{
+ min-height:220px;padding:25px;border-radius:19px;border:1px solid var(--line);
+ background:var(--surface);display:flex;flex-direction:column;justify-content:space-between;
+ transition:.25s;overflow:hidden;position:relative;
+}
+.product:hover{transform:translateY(-5px);background:var(--surface2);border-color:#3a3e46}
+.product .emoji{font-size:2.6rem}
+.product h3{font-size:1.3rem;margin-top:25px}
+.product p{color:var(--muted);font-size:.9rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-card{
+ display:flex;align-items:center;justify-content:space-between;gap:18px;
+ padding:23px;border:1px solid var(--line);background:var(--surface);border-radius:15px;
+}
+.contact-card:hover{border-color:#555}
+.contact-icon{font-size:1.5rem}
+.contact-text small{display:block;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
+.contact-text strong{display:block;margin-top:2px;word-break:break-word}
+.arrow{color:var(--muted)}
+.cta{
+ border:1px solid var(--line);border-radius:25px;padding:45px;
+ background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.1),transparent 30%),#111317;
+ display:flex;align-items:center;justify-content:space-between;gap:30px
+}
+.cta p{color:var(--muted);margin-top:10px}
+footer{padding:34px 0;color:var(--muted);font-size:.82rem;text-align:center;border-top:1px solid var(--line)}
+.float-wa{
+ position:fixed;right:20px;bottom:20px;z-index:10;background:var(--green);color:#061008;
+ width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:1.6rem;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+@media(max-width:760px){
+ .navlinks{display:none}.hero{min-height:88vh}.hero-content{padding-top:125px}
+ h1{letter-spacing:-3px}.catalog,.grid,.contact-grid{grid-template-columns:1fr}
+ .catalog-side{min-height:170px}.cta{padding:30px;flex-direction:column;align-items:flex-start}
+ section{padding:70px 0}.product{min-height:190px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="inicio">
+<nav>
+ <div class="container nav">
+  <div class="logo">ANTONIOTACU</div>
+  <div class="navlinks">
+   <a href="#catalogo">Catálogo</a>
+   <a href="#productos">Productos</a>
+   <a href="#contacto">Contacto</a>
+  </div>
+ </div>
+</nav>
+<div class="container hero-content">
+ <span class="badge">Modelos 3D · Diseño · Creatividad</span>
+ <h1>Diseños que<br>se hacen realidad.</h1>
+ <p class="hero-copy">Descubre modelos 3D, figuras, accesorios y piezas para darle un toque diferente a tus espacios y proyectos.</p>
+ <div class="actions">
+  <a class="btn primary" href="https://drive.google.com/file/d/1JZ7DQFC41jgL8i3riyyUbvUx3Npw3gU5/view?usp=drivesdk" target="_blank" rel="noopener">📖 Ver catálogo</a>
+  <a class="btn whatsapp" href="https://wa.me/529911145463?text=Hola%20ANTONIOTACU,%20vi%20su%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20sobre%20un%20producto." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+ </div>
+</div>
+</header>
+
+<section id="catalogo">
+<div class="container">
+ <div class="kicker">Explora</div>
+ <h2>Todo nuestro catálogo.</h2>
+ <p class="intro">Consulta el catálogo completo y encuentra el modelo que estás buscando.</p>
+ <div class="catalog">
+  <div class="catalog-main">
+   <h3>Catálogo ANTONIOTACU</h3>
+   <p>Modelos 3D, calaveras, encendedores, llaveros, cocina, decoración y figuras.</p>
+   <br>
+   <a class="btn primary" href="https://drive.google.com/file/d/1JZ7DQFC41jgL8i3riyyUbvUx3Npw3gU5/view?usp=drivesdk" target="_blank" rel="noopener">Abrir catálogo →</a>
+  </div>
+  <div class="catalog-side">
+   <p>Disponible en PDF</p>
+   <div class="number">01</div>
+   <p>Abre el catálogo desde Google Drive.</p>
+  </div>
+ </div>
+</div>
+</section>
+
+<section id="productos">
+<div class="container">
+ <div class="kicker">Categorías</div>
+ <h2>Encuentra tu próximo diseño.</h2>
+ <p class="intro">Estas son algunas de las categorías que aparecen en tu catálogo actual.</p>
+ <div class="grid">
+  <div class="product"><div class="emoji">💀</div><div><h3>Calaveras</h3><p>Modelos y diseños 3D.</p></div></div>
+  <div class="product"><div class="emoji">🔥</div><div><h3>Encendedores</h3><p>Diseños y modelos texturizados.</p></div></div>
+  <div class="product"><div class="emoji">🔑</div><div><h3>Llaveros</h3><p>Diseños variados y originales.</p></div></div>
+  <div class="product"><div class="emoji">🍳</div><div><h3>Cocina</h3><p>Accesorios y piezas para el hogar.</p></div></div>
+  <div class="product"><div class="emoji">🏠</div><div><h3>Decoración</h3><p>Objetos decorativos y funcionales.</p></div></div>
+  <div class="product"><div class="emoji">🎮</div><div><h3>Figuras</h3><p>Personajes y modelos coleccionables.</p></div></div>
+ </div>
+</div>
+</section>
+
+<section id="contacto">
+<div class="container">
+ <div class="kicker">Contacto</div>
+ <h2>¿Viste algo que te gustó?</h2>
+ <p class="intro">Escríbenos y pregunta por el modelo que te interesa.</p>
+ <div class="contact-grid">
+  <a class="contact-card" href="https://wa.me/529911145463" target="_blank" rel="noopener"><span class="contact-icon">💬</span><span class="contact-text"><small>WhatsApp</small><strong>991 114 5463</strong></span><span class="arrow">→</span></a>
+  <a class="contact-card" href="mailto:Tacu.antonio@gmail.com"><span class="contact-icon">✉️</span><span class="contact-text"><small>Correo</small><strong>Tacu.antonio@gmail.com</strong></span><span class="arrow">→</span></a>
+  <a class="contact-card" href="https://www.facebook.com/share/1JEuitubsH/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="contact-icon">f</span><span class="contact-text"><small>Facebook</small><strong>ANTONIOTACU</strong></span><span class="arrow">→</span></a>
+  <a class="contact-card" href="https://www.instagram.com/antontcch?stkn=MWVmNDF5cTJiazRwZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener"><span class="contact-icon">◎</span><span class="contact-text"><small>Instagram</small><strong>@antontcch</strong></span><span class="arrow">→</span></a>
+ </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+ <div class="cta">
+  <div><div class="kicker">¿Listo?</div><h2>Vamos a crear algo.</h2><p>Consulta el catálogo o mándanos un mensaje.</p></div>
+  <a class="btn whatsapp" href="https://wa.me/529911145463?text=Hola%20ANTONIOTACU,%20quiero%20cotizar%20un%20producto." target="_blank" rel="noopener">Hablar por WhatsApp →</a>
+ </div>
+</div>
+</section>
+
+<footer>© 2026 ANTONIOTACU · Modelos 3D</footer>
+
+<a class="float-wa" href="https://wa.me/529911145463" target="_blank" rel="noopener" aria-label="WhatsApp">⌕</a>
+</body>
+</html>
